@@ -22,7 +22,7 @@ namespace UserRegistrationLambdaExpression
                 if (flag == true)
                     return true;
                 else
-                    return false;
+                    throw new InvalidUserRegistrationException(InvalidUserRegistrationException.ExceptionType.INVALID_FIRSTNAME, "Invalid first name");
             }
             while (flag == false);
 
@@ -37,7 +37,7 @@ namespace UserRegistrationLambdaExpression
                 if (flag == true)
                     return true;
                 else
-                    return false;
+                    throw new InvalidUserRegistrationException(InvalidUserRegistrationException.ExceptionType.INVALID_LASTNAME, "Invalid last name");
             }
             while (!flag);
         }
@@ -51,7 +51,7 @@ namespace UserRegistrationLambdaExpression
                 if (flag == true)
                     return true;
                 else
-                    return false;
+                    throw new InvalidUserRegistrationException(InvalidUserRegistrationException.ExceptionType.INVALID_EMAIL, "Invalid email");
             }
             while (!flag);
         }
@@ -65,7 +65,7 @@ namespace UserRegistrationLambdaExpression
                 if (flag == true)
                     return true;
                 else
-                    return false;
+                    throw new InvalidUserRegistrationException(InvalidUserRegistrationException.ExceptionType.INVALID_MOBILE, "Invalid Phone number");
             }
             while (!flag);
         }
@@ -79,7 +79,7 @@ namespace UserRegistrationLambdaExpression
                 if (flag == true)
                     return true;
                 else
-                    return false;
+                    throw new InvalidUserRegistrationException(InvalidUserRegistrationException.ExceptionType.INVALID_PASSWORD, "Invalid password");
 
             }
             while (!flag);
@@ -92,6 +92,7 @@ namespace UserRegistrationLambdaExpression
                 return true;
             else
                 return false;
+
 
         }
     }
